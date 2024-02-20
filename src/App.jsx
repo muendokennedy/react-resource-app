@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import { Form } from './Form';
+import { List } from './List';
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
         const data = await response.json();
 
         setItems(data);
+
+        console.log(data);
         
       } catch (error) {
         
@@ -34,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <Form reqType={reqType} setReqType={setReqType}/>
+      <List items={items}/>
     </div>
   );
 }
